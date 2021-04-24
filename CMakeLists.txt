@@ -162,7 +162,7 @@ include_directories(
 #   scripts/my_python_script
 #   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
-catkin_install_python(PROGRAMS scripts/move_turtlebot3.py
+catkin_install_python(PROGRAMS scripts/move_turtlebot3.py scripts/move_base.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
