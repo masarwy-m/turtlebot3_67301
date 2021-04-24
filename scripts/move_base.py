@@ -27,6 +27,8 @@ def movebase_client():
 
    # Sends the goal to the action server.
     client.send_goal(goal)
+    rospy.loginfo("New goal command received!")
+
    # Waits for the server to finish performing the action.
     wait = client.wait_for_result()
    # If the result doesn't arrive, assume the Server is not available
