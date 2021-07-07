@@ -38,6 +38,9 @@ class DirtPublisher:
     def run(self):
           # Main while loop
           while not rospy.is_shutdown():
+              
+            print('\ncurrent status:')   
+            print(self.collected_per_agent)
             self.publish_objects()
             if len(self.dirt_pieces)==0:
                 print('all dirt collected. exiting')
@@ -69,8 +72,6 @@ class DirtPublisher:
         current_dirt_pieces = []
         index = 0        
         for  cur_dirt in self.dirt_pieces:             
-            print('cur_dirt\n')
-            print(cur_dirt)
             dirt_x = float(cur_dirt[0])
             dirt_y = float(cur_dirt[1])
             #eucludian distance
@@ -78,7 +79,7 @@ class DirtPublisher:
             
             if dist<self.radius:
 
-                print('dirt piece (%f %f) collected by agent %d'%(dirt_x, dirt_y, agent_id))
+                print('\ndirt piece (%f %f) collected by agent %d'%(dirt_x, dirt_y, agent_id))
                 # add to the agent's list of collected items
                 self.collected_per_agent[agent_id]+=1
             else:# not collected
