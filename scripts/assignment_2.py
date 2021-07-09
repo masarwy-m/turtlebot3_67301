@@ -37,12 +37,23 @@ if __name__ == '__main__':
     exec_mode = sys.argv[1] 
     print('exec_mode:' + exec_mode)        
 
+<<<<<<< HEAD
     if exec_mode == 'cleaning':        
         vacuum_cleaning(0)
+=======
+    agent_id = sys.argv[2]
+    print('agent id:' + agent_id)        
+    if exec_mode == 'cleaning':        
+        vacuum_cleaning(agent_id)
+>>>>>>> a32ca6a298db4394d3a7727f0480e35541f502bc
     elif exec_mode == 'inspection':
         inspection()
     else:
         print("Code not found")
+<<<<<<< HEAD
         raise NotImplementedError
 
 
+=======
+        raise NotImplementedError
+>>>>>>> a32ca6a298db4394d3a7727f0480e35541f502bc
